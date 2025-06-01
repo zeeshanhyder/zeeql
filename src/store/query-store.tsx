@@ -4,8 +4,6 @@ import {
 	type PropsWithChildren,
 	createContext,
 	useContext,
-	useEffect,
-	useRef,
 	useState,
 } from 'react';
 

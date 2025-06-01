@@ -1,4 +1,37 @@
-export const dataset = [
+export type DataSetkey =
+	| 'customerID'
+	| 'companyName'
+	| 'contactName'
+	| 'contactTitle'
+	| 'address'
+	| 'city'
+	| 'region'
+	| 'postalCode'
+	| 'country'
+	| 'phone'
+	| 'fax';
+export type DataSet = Record<DataSetkey, string | null>;
+
+export type DataColumn = {
+	key: DataSetkey;
+	label: string;
+};
+
+export const getDataColumns = (): DataColumn[] => [
+	{ key: 'customerID', label: 'Customer ID' },
+	{ key: 'companyName', label: 'Company Name' },
+	{ key: 'contactName', label: 'Contact Name' },
+	{ key: 'contactTitle', label: 'Contact Title' },
+	{ key: 'address', label: 'Address' },
+	{ key: 'city', label: 'City' },
+	{ key: 'region', label: 'Region' },
+	{ key: 'postalCode', label: 'Postal Code' },
+	{ key: 'country', label: 'Country' },
+	{ key: 'phone', label: 'Phone' },
+	{ key: 'fax', label: 'Fax' },
+];
+
+const fullDataset: DataSet[] = [
 	{
 		customerID: 'ALFKI',
 		companyName: 'Alfreds Futterkiste',
@@ -2366,3 +2399,16 @@ export const dataset = [
 		fax: '(26) 642-7012',
 	},
 ];
+
+const getLargeDataset = (): DataSet[] => fullDataset;
+const getRandomizedDataSubset = (): DataSet[] =>
+	fullDataset.sort(() => Math.random() - 0.5).slice(0, 10);
+
+export const getData = (fullData: boolean) => {
+	const delay = fullData ? 2500 : 1500;
+	return new Promise<DataSet[]>((resolve) => {
+		setTimeout(() => {
+			resolve(fullData ? getLargeDataset() : getRandomizedDataSubset());
+		}, delay);
+	});
+};
