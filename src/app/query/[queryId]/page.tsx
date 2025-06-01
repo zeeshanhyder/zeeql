@@ -1,7 +1,7 @@
 type EditorProps = {
-	params: {
+	params: Promise<{
 		queryId: string;
-	};
+	}>;
 };
 
 export default async function Editor(props: EditorProps) {
