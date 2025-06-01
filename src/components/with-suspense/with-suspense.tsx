@@ -1,14 +1,14 @@
-import { ReactElement, Suspense } from 'react'
-import DefaultFallback from './default-fallback'
+import { type ReactElement, Suspense } from 'react';
+import DefaultFallback from './default-fallback';
 
 export const withSuspense = (
-    Component: () => ReactElement,
-    Fallback?: () => ReactElement
+	Component: () => ReactElement,
+	Fallback?: () => ReactElement,
 ) => {
-    const FallbackComponent = Fallback ?? DefaultFallback
-    return () => (
-        <Suspense fallback={<FallbackComponent />}>
-            <Component />
-        </Suspense>
-    )
-}
+	const FallbackComponent = Fallback ?? DefaultFallback;
+	return () => (
+		<Suspense fallback={<FallbackComponent />}>
+			<Component />
+		</Suspense>
+	);
+};
