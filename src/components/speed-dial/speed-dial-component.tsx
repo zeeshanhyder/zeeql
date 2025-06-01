@@ -14,13 +14,12 @@ export const SpeedDialQueriesComponent = ({
 
 	return (
 		<>
-			<h3 className="text-md font-bold">Query Speed Dial</h3>
 			{hasQueries && (
 				<div className="mt-5 max-h-[300px] overflow-hidden overflow-y-auto">
 					{queries.map((query) => (
 						<Link key={query.id} href={`/query/${query.id}`}>
-							<Card className="p-5 mb-5 shadow-sm text-[var(--color-gray)] text-md">
-								{query.text}
+							<Card className="p-5 mb-2 shadow-md text-[var(--color-gray)] text-md">
+								{query.name ?? query.text}
 							</Card>
 						</Link>
 					))}

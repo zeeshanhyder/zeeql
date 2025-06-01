@@ -19,24 +19,28 @@ export const QueryForm = () => {
 			id,
 			text: query.value,
 		});
-		navigation.replace(`/query/${id}`);
+		navigation.push(`/query/${id}`);
 	};
 
 	return (
-		<Form className="flex flex-row grow" onSubmit={onSubmit}>
+		<Form className="flex flex-row grow items-end" onSubmit={onSubmit}>
 			<Input
 				isRequired
 				errorMessage="Please type in a query"
 				name="name"
-				placeholder="Type your query. Example: SELECT * FROM table"
-				radius="sm"
+				placeholder="Type your query"
 				size="lg"
-				isClearable={true}
-				className="flex flex-grow bg-white lg:min-w-[80%]"
+				isClearable
+				classNames={{ input: 'font-bold text-[var(--color-gray)] text-md' }}
+				color="secondary"
+				autoFocus
+				variant="underlined"
+				radius="none"
+				className="font-[monospace] mt-[8px] pr-5 grow"
 			/>
 			<Button
-				className="min-w-[50px] shadow-sm"
-				radius="sm"
+				className="min-w-[50px] shadow-sm font-mono font-bold text-sm"
+				radius="none"
 				size="lg"
 				color="primary"
 				type="submit"

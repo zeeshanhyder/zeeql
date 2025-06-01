@@ -4,21 +4,31 @@ import {
 	type PropsWithChildren,
 	createContext,
 	useContext,
+	useEffect,
 	useRef,
 	useState,
 } from 'react';
 
+const DEFAULT_QUERIES: Query[] = [
+	{
+		id: 1,
+		text: 'SELECT * FROM table WHERE true',
+		name: 'Get all data from table (large query)',
+	},
+	{ id: 2, text: 'SELECT DISTINCT FROM table', name: 'Get unique data' },
+];
+
 const getLocalStorageQueries = () => {
 	if (typeof window === 'undefined') {
-		return [];
+		return DEFAULT_QUERIES;
 	}
-	const queries = window.localStorage.getItem('queries');
-	if (queries) {
-		return JSON.parse(queries);
+	const storedQueries = window.localStorage.getItem('queries');
+	if (storedQueries) {
+		return JSON.parse(storedQueries);
 	}
-
-	return [];
+	return DEFAULT_QUERIES;
 };
+
 export type Query = {
 	id: number;
 	name?: string;
@@ -36,16 +46,19 @@ const QueryStoreContext = createContext<QueryProps>({
 });
 
 export const QueryStoreProvider = ({ children }: PropsWithChildren) => {
-	const queries = useRef<Query[]>(getLocalStorageQueries());
+	const [queries, setQuery] = useState<Query[]>(getLocalStorageQueries());
 	const saveQuery = (query: Query) => {
-		queries.current = [query, ...queries.current];
-		localStorage.setItem('queries', JSON.stringify(queries.current));
+		setQuery((prevState) => {
+			const latestQueries = [query, ...prevState];
+			localStorage.setItem('queries', JSON.stringify(latestQueries));
+			return latestQueries;
+		});
 	};
 
 	return (
 		<QueryStoreContext.Provider
 			value={{
-				queries: queries.current,
+				queries: getLocalStorageQueries(),
 				saveQuery,
 			}}
 		>
@@ -59,11 +72,11 @@ export const useQueryStore = () => {
 	return queryStore;
 };
 
-// fake promise to imitate network load
+// fake promise to imitate network load time
 export const getSpeedDialQueries = (): Promise<Query[]> => {
 	return new Promise((resolve) => {
 		setTimeout(() => {
-			resolve(getLocalStorageQueries());
+			resolve(DEFAULT_QUERIES);
 		}, 1500);
 	});
 };
