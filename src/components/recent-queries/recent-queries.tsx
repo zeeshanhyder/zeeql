@@ -2,7 +2,7 @@
 
 import { type Query, useQueryStore } from '@/store/query-store';
 import { ClockCounterClockwiseIcon } from '@phosphor-icons/react';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ConditionallyRender } from '../conditionally-render/conditionally-render';
 import { QueriesListComponent } from '../queries-list-component/queries-list-component';
 

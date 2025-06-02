@@ -1,6 +1,6 @@
 'use client';
 
-import { DataSet, getData } from '@/store/dataset';
+import { getData } from '@/store/dataset';
 import { useQueryStore } from '@/store/query-store';
 import {
 	Button,
@@ -9,14 +9,8 @@ import {
 	DropdownItem,
 	DropdownMenu,
 	DropdownTrigger,
-	Input,
 } from '@heroui/react';
-import {
-	CheckIcon,
-	DotsThreeOutlineVerticalIcon,
-	GearIcon,
-	HouseSimpleIcon,
-} from '@phosphor-icons/react';
+import { CheckIcon, GearIcon, HouseSimpleIcon } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { LoaderFull } from '../loader/loader-full';
@@ -48,7 +42,7 @@ export const QueryResult = ({ queryId }: { queryId: number }) => {
 					className="bg-white ml-auto h-[50px]"
 					as={Link}
 					href="/"
-					aria-label='Go to home button'
+					aria-label="Go to home button"
 				>
 					<HouseSimpleIcon weight="bold" size={16} />
 				</Button>
@@ -67,7 +61,7 @@ export const QueryResult = ({ queryId }: { queryId: number }) => {
 						<DropdownItem
 							key="new"
 							onPress={() => setShowVisualization(!showVisualization)}
-							aria-label='Toggle Graph visibility option'
+							aria-label="Toggle Graph visibility option"
 						>
 							<div className="flex flex-row items-center">
 								<SelectedGraphCheck /> <span>Show Graph</span>

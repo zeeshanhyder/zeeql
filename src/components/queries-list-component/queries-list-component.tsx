@@ -1,7 +1,6 @@
 'use client';
 import type { Query } from '@/store/query-store';
 import { Card } from '@heroui/react';
-import { ClockCounterClockwise } from '@phosphor-icons/react';
 import Link from 'next/link';
 
 type QueriesListProps = {

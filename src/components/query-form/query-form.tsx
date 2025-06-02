@@ -2,7 +2,7 @@
 import { useQueryStore } from '@/store/query-store';
 import { fakeId } from '@/utils/fake-id';
 import { Button, Form, Input } from '@heroui/react';
-import { ArrowsCounterClockwiseIcon, PlayIcon } from '@phosphor-icons/react';
+import { ArrowsCounterClockwiseIcon } from '@phosphor-icons/react';
 import { useRouter } from 'next/navigation';
 import { type FormEvent, useState } from 'react';
 
@@ -14,7 +14,7 @@ const SubmitButton = ({ isLoading }: { isLoading: boolean }) => {
 			size="lg"
 			color="primary"
 			type="submit"
-			aria-label='Run Query button'
+			aria-label="Run Query button"
 			isLoading={isLoading}
 		>
 			<div className="flex flex-row items-center">
