@@ -8,7 +8,7 @@ import {
 	TableRow,
 } from '@heroui/react';
 
-export default function QueryTable({ data }: { data: DataSet[] }) {
+export default function QueryResultTable({ data }: { data: DataSet[] }) {
 	const columns = getDataColumns();
 
 	return (

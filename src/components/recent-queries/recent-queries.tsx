@@ -14,7 +14,7 @@ export const RecentQueries = () => {
 	useEffect(() => {
 		setRecentQueries(() => {
 			let lastIndex = queries.length - 1;
-			lastIndex = lastIndex > 3 ? 3 : lastIndex - 1;
+			lastIndex = lastIndex > 3 ? 3 : lastIndex - 1; // we want to fetch 3 most recent queries. When data loads initially, favorite queries are set as first two queries in store. We don't want to show favorite queries as part of recent, so skip them when fetching recent queries
 			const updatedRecentQueries = queries.slice(0, lastIndex);
 			setHasQueries(updatedRecentQueries.length >= 1 && queries.length > 2);
 			return updatedRecentQueries;

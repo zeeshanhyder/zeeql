@@ -1,6 +1,6 @@
 'use client';
 
-import { getData } from '@/store/dataset';
+import { type DataSet, getData } from '@/store/dataset';
 import { useQueryStore } from '@/store/query-store';
 import {
 	Button,
@@ -12,21 +12,22 @@ import {
 } from '@heroui/react';
 import { CheckIcon, GearIcon, HouseSimpleIcon } from '@phosphor-icons/react';
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
+import { ConditionallyRender } from '../conditionally-render/conditionally-render';
 import { LoaderFull } from '../loader/loader-full';
 import { QueryForm } from '../query-form/query-form';
 import { useQuery } from '../use-query/use-query';
 import { Graph } from './graph';
-import QueryTable from './result-table';
+import QueryResultTable from './result-table';
 
 export const QueryResult = ({ queryId }: { queryId: number }) => {
 	const { queries } = useQueryStore();
 	const shouldReturnLargeData = queryId === 1; //queryId === 1 fetches large data for demo purposes
 	const { data, loading } = useQuery(() => getData(shouldReturnLargeData));
 	const [showVisualization, setShowVisualization] = useState(false);
-	const filteredQuery = useMemo(() => {
+	const filteredQuery = () => {
 		return queries.find((query) => query.id === queryId);
-	}, [queryId]);
+	};
 	const SelectedGraphCheck = () => {
 		if (showVisualization) {
 			return <CheckIcon size={16} className="mr-2" weight="bold" />;
@@ -70,9 +71,15 @@ export const QueryResult = ({ queryId }: { queryId: number }) => {
 					</DropdownMenu>
 				</Dropdown>
 			</Card>
-			{showVisualization && <Graph />}
-			{loading && <LoaderFull />}
-			{!loading && data && <QueryTable data={data} />}
+			<ConditionallyRender skipRender={!showVisualization}>
+				<Graph />
+			</ConditionallyRender>
+			<ConditionallyRender skipRender={!loading}>
+				<LoaderFull />
+			</ConditionallyRender>
+			<ConditionallyRender skipRender={loading && !data}>
+				<QueryResultTable data={data as DataSet[]} />
+			</ConditionallyRender>
 		</section>
 	);
 };
