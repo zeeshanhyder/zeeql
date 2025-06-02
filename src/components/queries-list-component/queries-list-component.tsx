@@ -2,6 +2,7 @@
 import type { Query } from '@/store/query-store';
 import { Card } from '@heroui/react';
 import Link from 'next/link';
+import { ConditionallyRender } from '../conditionally-render/conditionally-render';
 
 type QueriesListProps = {
 	queries: Query[];
@@ -13,7 +14,7 @@ export const QueriesListComponent = ({ queries, icon }: QueriesListProps) => {
 
 	return (
 		<>
-			{hasQueries && (
+			<ConditionallyRender skipRender={!hasQueries}>
 				<div className="mt-5 px-2 max-h-[300px] overflow-hidden overflow-y-auto">
 					{queries.map((query) => (
 						<Link key={query.id} href={`/query/${query.id}`}>
@@ -26,8 +27,10 @@ export const QueriesListComponent = ({ queries, icon }: QueriesListProps) => {
 						</Link>
 					))}
 				</div>
-			)}
-			{!hasQueries && <p className="my-10 text-center">No queries added yet</p>}
+			</ConditionallyRender>
+			<ConditionallyRender skipRender={hasQueries}>
+				<p className="my-10 text-center">No queries added yet</p>
+			</ConditionallyRender>
 		</>
 	);
 };
