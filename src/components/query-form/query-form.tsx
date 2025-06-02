@@ -3,27 +3,56 @@ import { useQueryStore } from '@/store/query-store';
 import { fakeId } from '@/utils/fake-id';
 import { Button, Form, Input } from '@heroui/react';
 import { useRouter } from 'next/navigation';
-import type { FormEvent } from 'react';
+import { type FormEvent, useState } from 'react';
 
-export const QueryForm = () => {
+const SubmitButton = ({ isLoading }: { isLoading: boolean }) => {
+	return (
+		<Button
+			className="min-w-[50px] shadow-sm font-mono font-bold text-sm"
+			radius="none"
+			size="lg"
+			color="primary"
+			type="submit"
+			isLoading={isLoading}
+		>
+			Run Query
+		</Button>
+	);
+};
+
+type QueryFormProps = {
+	defaultValue?: string;
+	onSubmit?: (ev: FormEvent<HTMLFormElement>) => void;
+};
+
+export const QueryForm = ({ defaultValue, onSubmit }: QueryFormProps) => {
+	const [isLoading, setIsLoading] = useState(false);
 	const { saveQuery } = useQueryStore();
 	const navigation = useRouter();
-	const onSubmit = (ev: FormEvent<HTMLFormElement>) => {
+	const onSubmitAction = (ev: FormEvent<HTMLFormElement>) => {
+		setIsLoading(true);
 		ev.preventDefault();
 		ev.stopPropagation();
 		const id = fakeId();
-		const query = ev.currentTarget.elements.namedItem(
+		const text = ev.currentTarget.elements.namedItem(
 			'name',
 		) as HTMLInputElement;
 		saveQuery({
 			id,
-			text: query.value,
+			text: text.value,
 		});
-		navigation.push(`/query/${id}`);
+
+		setTimeout(() => {
+			navigation.push(`/query/${id}`);
+			setIsLoading(false);
+		}, 1500);
 	};
 
 	return (
-		<Form className="flex flex-row grow items-end" onSubmit={onSubmit}>
+		<Form
+			className="flex flex-row grow items-end"
+			onSubmit={onSubmit ?? onSubmitAction}
+		>
 			<Input
 				isRequired
 				errorMessage="Please type in a query"
@@ -37,16 +66,9 @@ export const QueryForm = () => {
 				variant="underlined"
 				radius="none"
 				className="font-[monospace] mt-[8px] pr-5 grow"
+				defaultValue={defaultValue}
 			/>
-			<Button
-				className="min-w-[50px] shadow-sm font-mono font-bold text-sm"
-				radius="none"
-				size="lg"
-				color="primary"
-				type="submit"
-			>
-				Run Query
-			</Button>
+			<SubmitButton isLoading={isLoading} />
 		</Form>
 	);
 };

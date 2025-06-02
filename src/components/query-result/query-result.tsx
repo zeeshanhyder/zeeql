@@ -2,10 +2,25 @@
 
 import { DataSet, getData } from '@/store/dataset';
 import { useQueryStore } from '@/store/query-store';
-import { Button, Card, Input } from '@heroui/react';
+import {
+	Button,
+	Card,
+	Dropdown,
+	DropdownItem,
+	DropdownMenu,
+	DropdownTrigger,
+	Input,
+} from '@heroui/react';
+import {
+	CheckIcon,
+	DotsThreeOutlineVerticalIcon,
+	GearIcon,
+	HouseSimpleIcon,
+} from '@phosphor-icons/react';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { LoaderFull } from '../loader/loader-full';
+import { QueryForm } from '../query-form/query-form';
 import { useQuery } from '../use-query/use-query';
 import { Graph } from './graph';
 import QueryTable from './result-table';
@@ -18,7 +33,12 @@ export const QueryResult = ({ queryId }: { queryId: number }) => {
 	const filteredQuery = useMemo(() => {
 		return queries.find((query) => query.id === queryId);
 	}, [queryId]);
-	const showGraphLabel = showVisualization ? 'Hide Graph' : 'Show Graph';
+	const SelectedGraphCheck = () => {
+		if (showVisualization) {
+			return <CheckIcon size={16} className="mr-2" weight="bold" />;
+		}
+		return null;
+	};
 
 	return (
 		<section className="flex flex-col grow">
@@ -29,33 +49,30 @@ export const QueryResult = ({ queryId }: { queryId: number }) => {
 					as={Link}
 					href="/"
 				>
-					<b>Back</b>
+					<HouseSimpleIcon weight="bold" size={16} />
 				</Button>
-				<Input
-					isClearable
-					classNames={{ input: 'font-bold text-[var(--color-gray)] text-md' }}
-					color="secondary"
-					autoFocus
-					variant="underlined"
-					radius="none"
-					className="font-[monospace] flex mt-[8px] pr-5 grow"
-					placeholder="Type your query"
-					defaultValue={filteredQuery?.text}
-				/>
-				<Button
-					radius="none"
-					color="primary"
-					className="ml-auto h-[50px] w-[150px] font-mono font-bold text-sm"
-				>
-					Run Query
-				</Button>
-				<Button
-					radius="none"
-					className="bg-white ml-auto h-[50px] w-[150px]"
-					onPress={() => setShowVisualization(!showVisualization)}
-				>
-					<b>{showGraphLabel}</b>
-				</Button>
+				<QueryForm defaultValue={filteredQuery?.text} />
+
+				<Dropdown>
+					<DropdownTrigger>
+						<Button
+							radius="none"
+							className="bg-white ml-auto h-[50px] w-[25px]"
+						>
+							<GearIcon size={16} weight="bold" />
+						</Button>
+					</DropdownTrigger>
+					<DropdownMenu aria-label="Static Actions">
+						<DropdownItem
+							key="new"
+							onPress={() => setShowVisualization(!showVisualization)}
+						>
+							<div className="flex flex-row items-center">
+								<SelectedGraphCheck /> <span>Show Graph</span>
+							</div>
+						</DropdownItem>
+					</DropdownMenu>
+				</Dropdown>
 			</Card>
 			{showVisualization && <Graph />}
 			{loading && <LoaderFull />}

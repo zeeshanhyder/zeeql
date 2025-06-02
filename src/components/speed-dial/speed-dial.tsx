@@ -1,8 +1,9 @@
 'use client';
 import { getSpeedDialQueries } from '@/store/query-store';
+import { StarIcon } from '@phosphor-icons/react';
+import { QueriesListComponent } from '../queries-list-component/queries-list-component';
 import { useQuery } from '../use-query/use-query';
 import DefaultFallback from '../with-suspense/default-fallback';
-import { SpeedDialQueriesComponent } from './speed-dial-component';
 
 export const SpeedDialQueriesLoader = () => {
 	const { data, loading } = useQuery(getSpeedDialQueries);
@@ -11,7 +12,9 @@ export const SpeedDialQueriesLoader = () => {
 	}
 
 	if (data) {
-		return <SpeedDialQueriesComponent queries={data} />;
+		return (
+			<QueriesListComponent icon={<StarIcon size={16} />} queries={data} />
+		);
 	}
 };
 

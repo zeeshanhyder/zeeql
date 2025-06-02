@@ -19,13 +19,15 @@ export default function QueryTable({ data }: { data: DataSet[] }) {
 			shadow="none"
 			radius="none"
 			rowHeight={40}
+			isStriped
+			inert
 		>
 			<TableHeader columns={columns}>
 				{(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
 			</TableHeader>
 			<TableBody items={data}>
 				{(item) => (
-					<TableRow key={item.customerID}>
+					<TableRow key={item.customerID ?? 1 + new Date().getTime()}>
 						{(columnKey) => (
 							<TableCell>{item[columnKey as DataSetkey]}</TableCell>
 						)}
