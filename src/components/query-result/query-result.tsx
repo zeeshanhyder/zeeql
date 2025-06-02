@@ -48,6 +48,7 @@ export const QueryResult = ({ queryId }: { queryId: number }) => {
 					className="bg-white ml-auto h-[50px]"
 					as={Link}
 					href="/"
+					aria-label='Go to home button'
 				>
 					<HouseSimpleIcon weight="bold" size={16} />
 				</Button>
@@ -62,10 +63,11 @@ export const QueryResult = ({ queryId }: { queryId: number }) => {
 							<GearIcon size={16} weight="bold" />
 						</Button>
 					</DropdownTrigger>
-					<DropdownMenu aria-label="Static Actions">
+					<DropdownMenu aria-label="Additional Options">
 						<DropdownItem
 							key="new"
 							onPress={() => setShowVisualization(!showVisualization)}
+							aria-label='Toggle Graph visibility option'
 						>
 							<div className="flex flex-row items-center">
 								<SelectedGraphCheck /> <span>Show Graph</span>

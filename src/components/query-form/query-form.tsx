@@ -14,6 +14,7 @@ const SubmitButton = ({ isLoading }: { isLoading: boolean }) => {
 			size="lg"
 			color="primary"
 			type="submit"
+			aria-label='Run Query button'
 			isLoading={isLoading}
 		>
 			<div className="flex flex-row items-center">
