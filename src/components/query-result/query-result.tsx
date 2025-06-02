@@ -25,9 +25,7 @@ export const QueryResult = ({ queryId }: { queryId: number }) => {
 	const shouldReturnLargeData = queryId === 1; //queryId === 1 fetches large data for demo purposes
 	const { data, loading } = useQuery(() => getData(shouldReturnLargeData));
 	const [showVisualization, setShowVisualization] = useState(false);
-	const filteredQuery = () => {
-		return queries.find((query) => query.id === queryId);
-	};
+	const filteredQuery = queries.find((query) => query.id === queryId)
 	const SelectedGraphCheck = () => {
 		if (showVisualization) {
 			return <CheckIcon size={16} className="mr-2" weight="bold" />;
