@@ -10,7 +10,7 @@ export type DataSetkey =
 	| 'country'
 	| 'phone'
 	| 'fax';
-export type DataSet = Record<DataSetkey, string | null>;
+export type DataSet = Record<DataSetkey, string | number | null>;
 
 export type DataColumn = {
 	key: DataSetkey;
@@ -33,7 +33,7 @@ export const getDataColumns = (): DataColumn[] => [
 
 const fullDataset: DataSet[] = [
 	{
-		customerID: 'ALFKI',
+		customerID: 0,
 		companyName: 'Alfreds Futterkiste',
 		contactName: 'Maria Anders',
 		contactTitle: 'Sales Representative',
@@ -46,7 +46,7 @@ const fullDataset: DataSet[] = [
 		fax: '030-0076545',
 	},
 	{
-		customerID: 'ANATR',
+		customerID: 1,
 		companyName: 'Ana Trujillo Emparedados y helados',
 		contactName: 'Ana Trujillo',
 		contactTitle: 'Owner',
@@ -59,7 +59,7 @@ const fullDataset: DataSet[] = [
 		fax: '(5) 555-3745',
 	},
 	{
-		customerID: 'ANTON',
+		customerID: 2,
 		companyName: 'Antonio Moreno Taquería',
 		contactName: 'Antonio Moreno',
 		contactTitle: 'Owner',
@@ -72,7 +72,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'AROUT',
+		customerID: 3,
 		companyName: 'Around the Horn',
 		contactName: 'Thomas Hardy',
 		contactTitle: 'Sales Representative',
@@ -85,7 +85,7 @@ const fullDataset: DataSet[] = [
 		fax: '(171) 555-6750',
 	},
 	{
-		customerID: 'BERGS',
+		customerID: 4,
 		companyName: 'Berglunds snabbköp',
 		contactName: 'Christina Berglund',
 		contactTitle: 'Order Administrator',
@@ -98,7 +98,7 @@ const fullDataset: DataSet[] = [
 		fax: '0921-12 34 67',
 	},
 	{
-		customerID: 'BLAUS',
+		customerID: 5,
 		companyName: 'Blauer See Delikatessen',
 		contactName: 'Hanna Moos',
 		contactTitle: 'Sales Representative',
@@ -111,7 +111,7 @@ const fullDataset: DataSet[] = [
 		fax: '0621-08924',
 	},
 	{
-		customerID: 'BLONP',
+		customerID: 6,
 		companyName: 'Blondesddsl père et fils',
 		contactName: 'Frédérique Citeaux',
 		contactTitle: 'Marketing Manager',
@@ -124,7 +124,7 @@ const fullDataset: DataSet[] = [
 		fax: '88.60.15.32',
 	},
 	{
-		customerID: 'BOLID',
+		customerID: 7,
 		companyName: 'Bólido Comidas preparadas',
 		contactName: 'Martín Sommer',
 		contactTitle: 'Owner',
@@ -137,7 +137,7 @@ const fullDataset: DataSet[] = [
 		fax: '(91) 555 91 99',
 	},
 	{
-		customerID: 'BONAP',
+		customerID: 8,
 		companyName: "Bon app'",
 		contactName: 'Laurence Lebihan',
 		contactTitle: 'Owner',
@@ -150,7 +150,7 @@ const fullDataset: DataSet[] = [
 		fax: '91.24.45.41',
 	},
 	{
-		customerID: 'BOTTM',
+		customerID: 9,
 		companyName: 'Bottom-Dollar Markets',
 		contactName: 'Elizabeth Lincoln',
 		contactTitle: 'Accounting Manager',
@@ -163,7 +163,7 @@ const fullDataset: DataSet[] = [
 		fax: '(604) 555-3745',
 	},
 	{
-		customerID: 'BSBEV',
+		customerID: 10,
 		companyName: "B's Beverages",
 		contactName: 'Victoria Ashworth',
 		contactTitle: 'Sales Representative',
@@ -176,7 +176,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'CACTU',
+		customerID: 11,
 		companyName: 'Cactus Comidas para llevar',
 		contactName: 'Patricio Simpson',
 		contactTitle: 'Sales Agent',
@@ -189,7 +189,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 135-4892',
 	},
 	{
-		customerID: 'CENTC',
+		customerID: 12,
 		companyName: 'Centro comercial Moctezuma',
 		contactName: 'Francisco Chang',
 		contactTitle: 'Marketing Manager',
@@ -202,7 +202,7 @@ const fullDataset: DataSet[] = [
 		fax: '(5) 555-7293',
 	},
 	{
-		customerID: 'CHOPS',
+		customerID: 13,
 		companyName: 'Chop-suey Chinese',
 		contactName: 'Yang Wang',
 		contactTitle: 'Owner',
@@ -215,7 +215,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'COMMI',
+		customerID: 14,
 		companyName: 'Comércio Mineiro',
 		contactName: 'Pedro Afonso',
 		contactTitle: 'Sales Associate',
@@ -228,7 +228,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'CONSH',
+		customerID: 15,
 		companyName: 'Consolidated Holdings',
 		contactName: 'Elizabeth Brown',
 		contactTitle: 'Sales Representative',
@@ -241,7 +241,7 @@ const fullDataset: DataSet[] = [
 		fax: '(171) 555-9199',
 	},
 	{
-		customerID: 'DRACD',
+		customerID: 16,
 		companyName: 'Drachenblut Delikatessen',
 		contactName: 'Sven Ottlieb',
 		contactTitle: 'Order Administrator',
@@ -254,7 +254,7 @@ const fullDataset: DataSet[] = [
 		fax: '0241-059428',
 	},
 	{
-		customerID: 'DUMON',
+		customerID: 17,
 		companyName: 'Du monde entier',
 		contactName: 'Janine Labrune',
 		contactTitle: 'Owner',
@@ -267,7 +267,7 @@ const fullDataset: DataSet[] = [
 		fax: '40.67.89.89',
 	},
 	{
-		customerID: 'EASTC',
+		customerID: 18,
 		companyName: 'Eastern Connection',
 		contactName: 'Ann Devon',
 		contactTitle: 'Sales Agent',
@@ -280,7 +280,7 @@ const fullDataset: DataSet[] = [
 		fax: '(171) 555-3373',
 	},
 	{
-		customerID: 'ERNSH',
+		customerID: 19,
 		companyName: 'Ernst Handel',
 		contactName: 'Roland Mendel',
 		contactTitle: 'Sales Manager',
@@ -293,7 +293,7 @@ const fullDataset: DataSet[] = [
 		fax: '7675-3426',
 	},
 	{
-		customerID: 'FAMIA',
+		customerID: 20,
 		companyName: 'Familia Arquibaldo',
 		contactName: 'Aria Cruz',
 		contactTitle: 'Marketing Assistant',
@@ -306,7 +306,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'FISSA',
+		customerID: 21,
 		companyName: 'FISSA Fabrica Inter. Salchichas S.A.',
 		contactName: 'Diego Roel',
 		contactTitle: 'Accounting Manager',
@@ -319,7 +319,7 @@ const fullDataset: DataSet[] = [
 		fax: '(91) 555 55 93',
 	},
 	{
-		customerID: 'FOLIG',
+		customerID: 22,
 		companyName: 'Folies gourmandes',
 		contactName: 'Martine Rancé',
 		contactTitle: 'Assistant Sales Agent',
@@ -332,7 +332,7 @@ const fullDataset: DataSet[] = [
 		fax: '20.16.10.17',
 	},
 	{
-		customerID: 'FOLKO',
+		customerID: 23,
 		companyName: 'Folk och fä HB',
 		contactName: 'Maria Larsson',
 		contactTitle: 'Owner',
@@ -345,7 +345,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'FRANK',
+		customerID: 24,
 		companyName: 'Frankenversand',
 		contactName: 'Peter Franken',
 		contactTitle: 'Marketing Manager',
@@ -358,7 +358,7 @@ const fullDataset: DataSet[] = [
 		fax: '089-0877451',
 	},
 	{
-		customerID: 'FRANR',
+		customerID: 25,
 		companyName: 'France restauration',
 		contactName: 'Carine Schmitt',
 		contactTitle: 'Marketing Manager',
@@ -371,7 +371,7 @@ const fullDataset: DataSet[] = [
 		fax: '40.32.21.20',
 	},
 	{
-		customerID: 'FRANS',
+		customerID: 26,
 		companyName: 'Franchi S.p.A.',
 		contactName: 'Paolo Accorti',
 		contactTitle: 'Sales Representative',
@@ -384,7 +384,7 @@ const fullDataset: DataSet[] = [
 		fax: '011-4988261',
 	},
 	{
-		customerID: 'FURIB',
+		customerID: 27,
 		companyName: 'Furia Bacalhau e Frutos do Mar',
 		contactName: 'Lino Rodriguez',
 		contactTitle: 'Sales Manager',
@@ -397,7 +397,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 354-2535',
 	},
 	{
-		customerID: 'GALED',
+		customerID: 28,
 		companyName: 'Galería del gastrónomo',
 		contactName: 'Eduardo Saavedra',
 		contactTitle: 'Marketing Manager',
@@ -410,7 +410,7 @@ const fullDataset: DataSet[] = [
 		fax: '(93) 203 4561',
 	},
 	{
-		customerID: 'GODOS',
+		customerID: 29,
 		companyName: 'Godos Cocina Típica',
 		contactName: 'José Pedro Freyre',
 		contactTitle: 'Sales Manager',
@@ -423,7 +423,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'GOURL',
+		customerID: 30,
 		companyName: 'Gourmet Lanchonetes',
 		contactName: 'André Fonseca',
 		contactTitle: 'Sales Associate',
@@ -436,7 +436,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'GREAL',
+		customerID: 31,
 		companyName: 'Great Lakes Food Market',
 		contactName: 'Howard Snyder',
 		contactTitle: 'Marketing Manager',
@@ -449,7 +449,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'GROSR',
+		customerID: 32,
 		companyName: 'GROSELLA-Restaurante',
 		contactName: 'Manuel Pereira',
 		contactTitle: 'Owner',
@@ -462,7 +462,7 @@ const fullDataset: DataSet[] = [
 		fax: '(2) 283-3397',
 	},
 	{
-		customerID: 'HANAR',
+		customerID: 33,
 		companyName: 'Hanari Carnes',
 		contactName: 'Mario Pontes',
 		contactTitle: 'Accounting Manager',
@@ -475,7 +475,7 @@ const fullDataset: DataSet[] = [
 		fax: '(21) 555-8765',
 	},
 	{
-		customerID: 'HILAA',
+		customerID: 34,
 		companyName: 'HILARION-Abastos',
 		contactName: 'Carlos Hernández',
 		contactTitle: 'Sales Representative',
@@ -488,7 +488,7 @@ const fullDataset: DataSet[] = [
 		fax: '(5) 555-1948',
 	},
 	{
-		customerID: 'HUNGC',
+		customerID: 35,
 		companyName: 'Hungry Coyote Import Store',
 		contactName: 'Yoshi Latimer',
 		contactTitle: 'Sales Representative',
@@ -501,7 +501,7 @@ const fullDataset: DataSet[] = [
 		fax: '(503) 555-2376',
 	},
 	{
-		customerID: 'HUNGO',
+		customerID: 36,
 		companyName: 'Hungry Owl All-Night Grocers',
 		contactName: 'Patricia McKenna',
 		contactTitle: 'Sales Associate',
@@ -514,7 +514,7 @@ const fullDataset: DataSet[] = [
 		fax: '2967 3333',
 	},
 	{
-		customerID: 'ISLAT',
+		customerID: 37,
 		companyName: 'Island Trading',
 		contactName: 'Helen Bennett',
 		contactTitle: 'Marketing Manager',
@@ -527,7 +527,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'KOENE',
+		customerID: 38,
 		companyName: 'Königlich Essen',
 		contactName: 'Philip Cramer',
 		contactTitle: 'Sales Associate',
@@ -540,7 +540,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'LACOR',
+		customerID: 39,
 		companyName: "La corne d'abondance",
 		contactName: 'Daniel Tonini',
 		contactTitle: 'Sales Representative',
@@ -553,7 +553,7 @@ const fullDataset: DataSet[] = [
 		fax: '30.59.85.11',
 	},
 	{
-		customerID: 'LAMAI',
+		customerID: 40,
 		companyName: "La maison d'Asie",
 		contactName: 'Annette Roulet',
 		contactTitle: 'Sales Manager',
@@ -566,7 +566,7 @@ const fullDataset: DataSet[] = [
 		fax: '61.77.61.11',
 	},
 	{
-		customerID: 'LAUGB',
+		customerID: 41,
 		companyName: 'Laughing Bacchus Wine Cellars',
 		contactName: 'Yoshi Tannamuri',
 		contactTitle: 'Marketing Assistant',
@@ -579,7 +579,7 @@ const fullDataset: DataSet[] = [
 		fax: '(604) 555-7293',
 	},
 	{
-		customerID: 'LAZYK',
+		customerID: 42,
 		companyName: 'Lazy K Kountry Store',
 		contactName: 'John Steel',
 		contactTitle: 'Marketing Manager',
@@ -592,7 +592,7 @@ const fullDataset: DataSet[] = [
 		fax: '(509) 555-6221',
 	},
 	{
-		customerID: 'LEHMS',
+		customerID: 43,
 		companyName: 'Lehmanns Marktstand',
 		contactName: 'Renate Messner',
 		contactTitle: 'Sales Representative',
@@ -605,7 +605,7 @@ const fullDataset: DataSet[] = [
 		fax: '069-0245874',
 	},
 	{
-		customerID: 'LETSS',
+		customerID: 44,
 		companyName: "Let's Stop N Shop",
 		contactName: 'Jaime Yorres',
 		contactTitle: 'Owner',
@@ -618,7 +618,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'LILAS',
+		customerID: 45,
 		companyName: 'LILA-Supermercado',
 		contactName: 'Carlos González',
 		contactTitle: 'Accounting Manager',
@@ -631,7 +631,7 @@ const fullDataset: DataSet[] = [
 		fax: '(9) 331-7256',
 	},
 	{
-		customerID: 'LINOD',
+		customerID: 46,
 		companyName: 'LINO-Delicateses',
 		contactName: 'Felipe Izquierdo',
 		contactTitle: 'Owner',
@@ -644,7 +644,7 @@ const fullDataset: DataSet[] = [
 		fax: '(8) 34-93-93',
 	},
 	{
-		customerID: 'LONEP',
+		customerID: 47,
 		companyName: 'Lonesome Pine Restaurant',
 		contactName: 'Fran Wilson',
 		contactTitle: 'Sales Manager',
@@ -657,7 +657,7 @@ const fullDataset: DataSet[] = [
 		fax: '(503) 555-9646',
 	},
 	{
-		customerID: 'MAGAA',
+		customerID: 48,
 		companyName: 'Magazzini Alimentari Riuniti',
 		contactName: 'Giovanni Rovelli',
 		contactTitle: 'Marketing Manager',
@@ -670,7 +670,7 @@ const fullDataset: DataSet[] = [
 		fax: '035-640231',
 	},
 	{
-		customerID: 'MAISD',
+		customerID: 49,
 		companyName: 'Maison Dewey',
 		contactName: 'Catherine Dewey',
 		contactTitle: 'Sales Agent',
@@ -683,7 +683,7 @@ const fullDataset: DataSet[] = [
 		fax: '(02) 201 24 68',
 	},
 	{
-		customerID: 'MEREP',
+		customerID: 50,
 		companyName: 'Mère Paillarde',
 		contactName: 'Jean Fresnière',
 		contactTitle: 'Marketing Assistant',
@@ -696,7 +696,7 @@ const fullDataset: DataSet[] = [
 		fax: '(514) 555-8055',
 	},
 	{
-		customerID: 'MORGK',
+		customerID: 51,
 		companyName: 'Morgenstern Gesundkost',
 		contactName: 'Alexander Feuer',
 		contactTitle: 'Marketing Assistant',
@@ -709,7 +709,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'NORTS',
+		customerID: 52,
 		companyName: 'North/South',
 		contactName: 'Simon Crowther',
 		contactTitle: 'Sales Associate',
@@ -722,7 +722,7 @@ const fullDataset: DataSet[] = [
 		fax: '(171) 555-2530',
 	},
 	{
-		customerID: 'OCEAN',
+		customerID: 53,
 		companyName: 'Océano Atlántico Ltda.',
 		contactName: 'Yvonne Moncada',
 		contactTitle: 'Sales Agent',
@@ -735,7 +735,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 135-5535',
 	},
 	{
-		customerID: 'OLDWO',
+		customerID: 54,
 		companyName: 'Old World Delicatessen',
 		contactName: 'Rene Phillips',
 		contactTitle: 'Sales Representative',
@@ -748,7 +748,7 @@ const fullDataset: DataSet[] = [
 		fax: '(907) 555-2880',
 	},
 	{
-		customerID: 'OTTIK',
+		customerID: 55,
 		companyName: 'Ottilies Käseladen',
 		contactName: 'Henriette Pfalzheim',
 		contactTitle: 'Owner',
@@ -761,7 +761,7 @@ const fullDataset: DataSet[] = [
 		fax: '0221-0765721',
 	},
 	{
-		customerID: 'PARIS',
+		customerID: 56,
 		companyName: 'Paris spécialités',
 		contactName: 'Marie Bertrand',
 		contactTitle: 'Owner',
@@ -774,7 +774,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 42.34.22.77',
 	},
 	{
-		customerID: 'PERIC',
+		customerID: 57,
 		companyName: 'Pericles Comidas clásicas',
 		contactName: 'Guillermo Fernández',
 		contactTitle: 'Sales Representative',
@@ -787,7 +787,7 @@ const fullDataset: DataSet[] = [
 		fax: '(5) 545-3745',
 	},
 	{
-		customerID: 'PICCO',
+		customerID: 58,
 		companyName: 'Piccolo und mehr',
 		contactName: 'Georg Pipps',
 		contactTitle: 'Sales Manager',
@@ -800,7 +800,7 @@ const fullDataset: DataSet[] = [
 		fax: '6562-9723',
 	},
 	{
-		customerID: 'PRINI',
+		customerID: 59,
 		companyName: 'Princesa Isabel Vinhos',
 		contactName: 'Isabel de Castro',
 		contactTitle: 'Sales Representative',
@@ -813,7 +813,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'QUEDE',
+		customerID: 60,
 		companyName: 'Que Delícia',
 		contactName: 'Bernardo Batista',
 		contactTitle: 'Accounting Manager',
@@ -826,7 +826,7 @@ const fullDataset: DataSet[] = [
 		fax: '(21) 555-4545',
 	},
 	{
-		customerID: 'QUEEN',
+		customerID: 61,
 		companyName: 'Queen Cozinha',
 		contactName: 'Lúcia Carvalho',
 		contactTitle: 'Marketing Assistant',
@@ -839,7 +839,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'QUICK',
+		customerID: 62,
 		companyName: 'QUICK-Stop',
 		contactName: 'Horst Kloss',
 		contactTitle: 'Accounting Manager',
@@ -852,7 +852,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'RANCH',
+		customerID: 63,
 		companyName: 'Rancho grande',
 		contactName: 'Sergio Gutiérrez',
 		contactTitle: 'Sales Representative',
@@ -865,7 +865,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 123-5556',
 	},
 	{
-		customerID: 'RATTC',
+		customerID: 64,
 		companyName: 'Rattlesnake Canyon Grocery',
 		contactName: 'Paula Wilson',
 		contactTitle: 'Assistant Sales Representative',
@@ -878,7 +878,7 @@ const fullDataset: DataSet[] = [
 		fax: '(505) 555-3620',
 	},
 	{
-		customerID: 'REGGC',
+		customerID: 65,
 		companyName: 'Reggiani Caseifici',
 		contactName: 'Maurizio Moroni',
 		contactTitle: 'Sales Associate',
@@ -891,7 +891,7 @@ const fullDataset: DataSet[] = [
 		fax: '0522-556722',
 	},
 	{
-		customerID: 'RICAR',
+		customerID: 66,
 		companyName: 'Ricardo Adocicados',
 		contactName: 'Janete Limeira',
 		contactTitle: 'Assistant Sales Agent',
@@ -904,7 +904,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'RICSU',
+		customerID: 67,
 		companyName: 'Richter Supermarkt',
 		contactName: 'Michael Holz',
 		contactTitle: 'Sales Manager',
@@ -917,7 +917,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'ROMEY',
+		customerID: 68,
 		companyName: 'Romero y tomillo',
 		contactName: 'Alejandra Camino',
 		contactTitle: 'Accounting Manager',
@@ -930,7 +930,7 @@ const fullDataset: DataSet[] = [
 		fax: '(91) 745 6210',
 	},
 	{
-		customerID: 'SANTG',
+		customerID: 69,
 		companyName: 'Santé Gourmet',
 		contactName: 'Jonas Bergulfsen',
 		contactTitle: 'Owner',
@@ -943,7 +943,7 @@ const fullDataset: DataSet[] = [
 		fax: '07-98 92 47',
 	},
 	{
-		customerID: 'SAVEA',
+		customerID: 70,
 		companyName: 'Save-a-lot Markets',
 		contactName: 'Jose Pavarotti',
 		contactTitle: 'Sales Representative',
@@ -956,7 +956,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'SEVES',
+		customerID: 71,
 		companyName: 'Seven Seas Imports',
 		contactName: 'Hari Kumar',
 		contactTitle: 'Sales Manager',
@@ -969,7 +969,7 @@ const fullDataset: DataSet[] = [
 		fax: '(171) 555-5646',
 	},
 	{
-		customerID: 'SIMOB',
+		customerID: 72,
 		companyName: 'Simons bistro',
 		contactName: 'Jytte Petersen',
 		contactTitle: 'Owner',
@@ -982,7 +982,7 @@ const fullDataset: DataSet[] = [
 		fax: '31 13 35 57',
 	},
 	{
-		customerID: 'SPECD',
+		customerID: 73,
 		companyName: 'Spécialités du monde',
 		contactName: 'Dominique Perrier',
 		contactTitle: 'Marketing Manager',
@@ -995,7 +995,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 47.55.60.20',
 	},
 	{
-		customerID: 'SPLIR',
+		customerID: 74,
 		companyName: 'Split Rail Beer & Ale',
 		contactName: 'Art Braunschweiger',
 		contactTitle: 'Sales Manager',
@@ -1008,7 +1008,7 @@ const fullDataset: DataSet[] = [
 		fax: '(307) 555-6525',
 	},
 	{
-		customerID: 'SUPRD',
+		customerID: 75,
 		companyName: 'Suprêmes délices',
 		contactName: 'Pascale Cartrain',
 		contactTitle: 'Accounting Manager',
@@ -1021,7 +1021,7 @@ const fullDataset: DataSet[] = [
 		fax: '(071) 23 67 22 21',
 	},
 	{
-		customerID: 'THEBI',
+		customerID: 76,
 		companyName: 'The Big Cheese',
 		contactName: 'Liz Nixon',
 		contactTitle: 'Marketing Manager',
@@ -1034,7 +1034,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'THECR',
+		customerID: 77,
 		companyName: 'The Cracker Box',
 		contactName: 'Liu Wong',
 		contactTitle: 'Marketing Assistant',
@@ -1047,7 +1047,7 @@ const fullDataset: DataSet[] = [
 		fax: '(406) 555-8083',
 	},
 	{
-		customerID: 'TOMSP',
+		customerID: 78,
 		companyName: 'Toms Spezialitäten',
 		contactName: 'Karin Josephs',
 		contactTitle: 'Marketing Manager',
@@ -1060,7 +1060,7 @@ const fullDataset: DataSet[] = [
 		fax: '0251-035695',
 	},
 	{
-		customerID: 'TORTU',
+		customerID: 79,
 		companyName: 'Tortuga Restaurante',
 		contactName: 'Miguel Angel Paolino',
 		contactTitle: 'Owner',
@@ -1073,7 +1073,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'TRADH',
+		customerID: 80,
 		companyName: 'Tradição Hipermercados',
 		contactName: 'Anabela Domingues',
 		contactTitle: 'Sales Representative',
@@ -1086,7 +1086,7 @@ const fullDataset: DataSet[] = [
 		fax: '(11) 555-2168',
 	},
 	{
-		customerID: 'TRAIH',
+		customerID: 81,
 		companyName: "Trail's Head Gourmet Provisioners",
 		contactName: 'Helvetius Nagy',
 		contactTitle: 'Sales Associate',
@@ -1099,7 +1099,7 @@ const fullDataset: DataSet[] = [
 		fax: '(206) 555-2174',
 	},
 	{
-		customerID: 'VAFFE',
+		customerID: 82,
 		companyName: 'Vaffeljernet',
 		contactName: 'Palle Ibsen',
 		contactTitle: 'Sales Manager',
@@ -1112,7 +1112,7 @@ const fullDataset: DataSet[] = [
 		fax: '86 22 33 44',
 	},
 	{
-		customerID: 'VICTE',
+		customerID: 83,
 		companyName: 'Victuailles en stock',
 		contactName: 'Mary Saveley',
 		contactTitle: 'Sales Agent',
@@ -1125,7 +1125,7 @@ const fullDataset: DataSet[] = [
 		fax: '78.32.54.87',
 	},
 	{
-		customerID: 'VINET',
+		customerID: 84,
 		companyName: 'Vins et alcools Chevalier',
 		contactName: 'Paul Henriot',
 		contactTitle: 'Accounting Manager',
@@ -1138,7 +1138,7 @@ const fullDataset: DataSet[] = [
 		fax: '26.47.15.11',
 	},
 	{
-		customerID: 'WANDK',
+		customerID: 85,
 		companyName: 'Die Wandernde Kuh',
 		contactName: 'Rita Müller',
 		contactTitle: 'Sales Representative',
@@ -1151,7 +1151,7 @@ const fullDataset: DataSet[] = [
 		fax: '0711-035428',
 	},
 	{
-		customerID: 'WARTH',
+		customerID: 86,
 		companyName: 'Wartian Herkku',
 		contactName: 'Pirkko Koskitalo',
 		contactTitle: 'Accounting Manager',
@@ -1164,7 +1164,7 @@ const fullDataset: DataSet[] = [
 		fax: '981-443655',
 	},
 	{
-		customerID: 'WELLI',
+		customerID: 87,
 		companyName: 'Wellington Importadora',
 		contactName: 'Paula Parente',
 		contactTitle: 'Sales Manager',
@@ -1177,7 +1177,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'WHITC',
+		customerID: 88,
 		companyName: 'White Clover Markets',
 		contactName: 'Karl Jablonski',
 		contactTitle: 'Owner',
@@ -1190,7 +1190,7 @@ const fullDataset: DataSet[] = [
 		fax: '(206) 555-4115',
 	},
 	{
-		customerID: 'WILMK',
+		customerID: 89,
 		companyName: 'Wilman Kala',
 		contactName: 'Matti Karttunen',
 		contactTitle: 'Owner/Marketing Assistant',
@@ -1203,7 +1203,7 @@ const fullDataset: DataSet[] = [
 		fax: '90-224 8858',
 	},
 	{
-		customerID: 'WOLZA',
+		customerID: 90,
 		companyName: 'Wolski  Zajazd',
 		contactName: 'Zbyszek Piestrzeniewicz',
 		contactTitle: 'Owner',
@@ -1216,7 +1216,7 @@ const fullDataset: DataSet[] = [
 		fax: '(26) 642-7012',
 	},
 	{
-		customerID: 'ALFKI',
+		customerID: 91,
 		companyName: 'Alfreds Futterkiste',
 		contactName: 'Maria Anders',
 		contactTitle: 'Sales Representative',
@@ -1229,7 +1229,7 @@ const fullDataset: DataSet[] = [
 		fax: '030-0076545',
 	},
 	{
-		customerID: 'ANATR',
+		customerID: 92,
 		companyName: 'Ana Trujillo Emparedados y helados',
 		contactName: 'Ana Trujillo',
 		contactTitle: 'Owner',
@@ -1242,7 +1242,7 @@ const fullDataset: DataSet[] = [
 		fax: '(5) 555-3745',
 	},
 	{
-		customerID: 'ANTON',
+		customerID: 93,
 		companyName: 'Antonio Moreno Taquería',
 		contactName: 'Antonio Moreno',
 		contactTitle: 'Owner',
@@ -1255,7 +1255,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'AROUT',
+		customerID: 94,
 		companyName: 'Around the Horn',
 		contactName: 'Thomas Hardy',
 		contactTitle: 'Sales Representative',
@@ -1268,7 +1268,7 @@ const fullDataset: DataSet[] = [
 		fax: '(171) 555-6750',
 	},
 	{
-		customerID: 'BERGS',
+		customerID: 95,
 		companyName: 'Berglunds snabbköp',
 		contactName: 'Christina Berglund',
 		contactTitle: 'Order Administrator',
@@ -1281,7 +1281,7 @@ const fullDataset: DataSet[] = [
 		fax: '0921-12 34 67',
 	},
 	{
-		customerID: 'BLAUS',
+		customerID: 96,
 		companyName: 'Blauer See Delikatessen',
 		contactName: 'Hanna Moos',
 		contactTitle: 'Sales Representative',
@@ -1294,7 +1294,7 @@ const fullDataset: DataSet[] = [
 		fax: '0621-08924',
 	},
 	{
-		customerID: 'BLONP',
+		customerID: 97,
 		companyName: 'Blondesddsl père et fils',
 		contactName: 'Frédérique Citeaux',
 		contactTitle: 'Marketing Manager',
@@ -1307,7 +1307,7 @@ const fullDataset: DataSet[] = [
 		fax: '88.60.15.32',
 	},
 	{
-		customerID: 'BOLID',
+		customerID: 98,
 		companyName: 'Bólido Comidas preparadas',
 		contactName: 'Martín Sommer',
 		contactTitle: 'Owner',
@@ -1320,7 +1320,7 @@ const fullDataset: DataSet[] = [
 		fax: '(91) 555 91 99',
 	},
 	{
-		customerID: 'BONAP',
+		customerID: 99,
 		companyName: "Bon app'",
 		contactName: 'Laurence Lebihan',
 		contactTitle: 'Owner',
@@ -1333,7 +1333,7 @@ const fullDataset: DataSet[] = [
 		fax: '91.24.45.41',
 	},
 	{
-		customerID: 'BOTTM',
+		customerID: 100,
 		companyName: 'Bottom-Dollar Markets',
 		contactName: 'Elizabeth Lincoln',
 		contactTitle: 'Accounting Manager',
@@ -1346,7 +1346,7 @@ const fullDataset: DataSet[] = [
 		fax: '(604) 555-3745',
 	},
 	{
-		customerID: 'BSBEV',
+		customerID: 101,
 		companyName: "B's Beverages",
 		contactName: 'Victoria Ashworth',
 		contactTitle: 'Sales Representative',
@@ -1359,7 +1359,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'CACTU',
+		customerID: 102,
 		companyName: 'Cactus Comidas para llevar',
 		contactName: 'Patricio Simpson',
 		contactTitle: 'Sales Agent',
@@ -1372,7 +1372,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 135-4892',
 	},
 	{
-		customerID: 'CENTC',
+		customerID: 103,
 		companyName: 'Centro comercial Moctezuma',
 		contactName: 'Francisco Chang',
 		contactTitle: 'Marketing Manager',
@@ -1385,7 +1385,7 @@ const fullDataset: DataSet[] = [
 		fax: '(5) 555-7293',
 	},
 	{
-		customerID: 'CHOPS',
+		customerID: 104,
 		companyName: 'Chop-suey Chinese',
 		contactName: 'Yang Wang',
 		contactTitle: 'Owner',
@@ -1398,7 +1398,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'COMMI',
+		customerID: 105,
 		companyName: 'Comércio Mineiro',
 		contactName: 'Pedro Afonso',
 		contactTitle: 'Sales Associate',
@@ -1411,7 +1411,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'CONSH',
+		customerID: 106,
 		companyName: 'Consolidated Holdings',
 		contactName: 'Elizabeth Brown',
 		contactTitle: 'Sales Representative',
@@ -1424,7 +1424,7 @@ const fullDataset: DataSet[] = [
 		fax: '(171) 555-9199',
 	},
 	{
-		customerID: 'DRACD',
+		customerID: 107,
 		companyName: 'Drachenblut Delikatessen',
 		contactName: 'Sven Ottlieb',
 		contactTitle: 'Order Administrator',
@@ -1437,7 +1437,7 @@ const fullDataset: DataSet[] = [
 		fax: '0241-059428',
 	},
 	{
-		customerID: 'DUMON',
+		customerID: 108,
 		companyName: 'Du monde entier',
 		contactName: 'Janine Labrune',
 		contactTitle: 'Owner',
@@ -1450,7 +1450,7 @@ const fullDataset: DataSet[] = [
 		fax: '40.67.89.89',
 	},
 	{
-		customerID: 'EASTC',
+		customerID: 109,
 		companyName: 'Eastern Connection',
 		contactName: 'Ann Devon',
 		contactTitle: 'Sales Agent',
@@ -1463,7 +1463,7 @@ const fullDataset: DataSet[] = [
 		fax: '(171) 555-3373',
 	},
 	{
-		customerID: 'ERNSH',
+		customerID: 110,
 		companyName: 'Ernst Handel',
 		contactName: 'Roland Mendel',
 		contactTitle: 'Sales Manager',
@@ -1476,7 +1476,7 @@ const fullDataset: DataSet[] = [
 		fax: '7675-3426',
 	},
 	{
-		customerID: 'FAMIA',
+		customerID: 111,
 		companyName: 'Familia Arquibaldo',
 		contactName: 'Aria Cruz',
 		contactTitle: 'Marketing Assistant',
@@ -1489,7 +1489,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'FISSA',
+		customerID: 112,
 		companyName: 'FISSA Fabrica Inter. Salchichas S.A.',
 		contactName: 'Diego Roel',
 		contactTitle: 'Accounting Manager',
@@ -1502,7 +1502,7 @@ const fullDataset: DataSet[] = [
 		fax: '(91) 555 55 93',
 	},
 	{
-		customerID: 'FOLIG',
+		customerID: 113,
 		companyName: 'Folies gourmandes',
 		contactName: 'Martine Rancé',
 		contactTitle: 'Assistant Sales Agent',
@@ -1515,7 +1515,7 @@ const fullDataset: DataSet[] = [
 		fax: '20.16.10.17',
 	},
 	{
-		customerID: 'FOLKO',
+		customerID: 114,
 		companyName: 'Folk och fä HB',
 		contactName: 'Maria Larsson',
 		contactTitle: 'Owner',
@@ -1528,7 +1528,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'FRANK',
+		customerID: 115,
 		companyName: 'Frankenversand',
 		contactName: 'Peter Franken',
 		contactTitle: 'Marketing Manager',
@@ -1541,7 +1541,7 @@ const fullDataset: DataSet[] = [
 		fax: '089-0877451',
 	},
 	{
-		customerID: 'FRANR',
+		customerID: 116,
 		companyName: 'France restauration',
 		contactName: 'Carine Schmitt',
 		contactTitle: 'Marketing Manager',
@@ -1554,7 +1554,7 @@ const fullDataset: DataSet[] = [
 		fax: '40.32.21.20',
 	},
 	{
-		customerID: 'FRANS',
+		customerID: 117,
 		companyName: 'Franchi S.p.A.',
 		contactName: 'Paolo Accorti',
 		contactTitle: 'Sales Representative',
@@ -1567,7 +1567,7 @@ const fullDataset: DataSet[] = [
 		fax: '011-4988261',
 	},
 	{
-		customerID: 'FURIB',
+		customerID: 118,
 		companyName: 'Furia Bacalhau e Frutos do Mar',
 		contactName: 'Lino Rodriguez',
 		contactTitle: 'Sales Manager',
@@ -1580,7 +1580,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 354-2535',
 	},
 	{
-		customerID: 'GALED',
+		customerID: 119,
 		companyName: 'Galería del gastrónomo',
 		contactName: 'Eduardo Saavedra',
 		contactTitle: 'Marketing Manager',
@@ -1593,7 +1593,7 @@ const fullDataset: DataSet[] = [
 		fax: '(93) 203 4561',
 	},
 	{
-		customerID: 'GODOS',
+		customerID: 120,
 		companyName: 'Godos Cocina Típica',
 		contactName: 'José Pedro Freyre',
 		contactTitle: 'Sales Manager',
@@ -1606,7 +1606,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'GOURL',
+		customerID: 121,
 		companyName: 'Gourmet Lanchonetes',
 		contactName: 'André Fonseca',
 		contactTitle: 'Sales Associate',
@@ -1619,7 +1619,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'GREAL',
+		customerID: 122,
 		companyName: 'Great Lakes Food Market',
 		contactName: 'Howard Snyder',
 		contactTitle: 'Marketing Manager',
@@ -1632,7 +1632,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'GROSR',
+		customerID: 123,
 		companyName: 'GROSELLA-Restaurante',
 		contactName: 'Manuel Pereira',
 		contactTitle: 'Owner',
@@ -1645,7 +1645,7 @@ const fullDataset: DataSet[] = [
 		fax: '(2) 283-3397',
 	},
 	{
-		customerID: 'HANAR',
+		customerID: 124,
 		companyName: 'Hanari Carnes',
 		contactName: 'Mario Pontes',
 		contactTitle: 'Accounting Manager',
@@ -1658,7 +1658,7 @@ const fullDataset: DataSet[] = [
 		fax: '(21) 555-8765',
 	},
 	{
-		customerID: 'HILAA',
+		customerID: 125,
 		companyName: 'HILARION-Abastos',
 		contactName: 'Carlos Hernández',
 		contactTitle: 'Sales Representative',
@@ -1671,7 +1671,7 @@ const fullDataset: DataSet[] = [
 		fax: '(5) 555-1948',
 	},
 	{
-		customerID: 'HUNGC',
+		customerID: 126,
 		companyName: 'Hungry Coyote Import Store',
 		contactName: 'Yoshi Latimer',
 		contactTitle: 'Sales Representative',
@@ -1684,7 +1684,7 @@ const fullDataset: DataSet[] = [
 		fax: '(503) 555-2376',
 	},
 	{
-		customerID: 'HUNGO',
+		customerID: 127,
 		companyName: 'Hungry Owl All-Night Grocers',
 		contactName: 'Patricia McKenna',
 		contactTitle: 'Sales Associate',
@@ -1697,7 +1697,7 @@ const fullDataset: DataSet[] = [
 		fax: '2967 3333',
 	},
 	{
-		customerID: 'ISLAT',
+		customerID: 128,
 		companyName: 'Island Trading',
 		contactName: 'Helen Bennett',
 		contactTitle: 'Marketing Manager',
@@ -1710,7 +1710,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'KOENE',
+		customerID: 129,
 		companyName: 'Königlich Essen',
 		contactName: 'Philip Cramer',
 		contactTitle: 'Sales Associate',
@@ -1723,7 +1723,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'LACOR',
+		customerID: 130,
 		companyName: "La corne d'abondance",
 		contactName: 'Daniel Tonini',
 		contactTitle: 'Sales Representative',
@@ -1736,7 +1736,7 @@ const fullDataset: DataSet[] = [
 		fax: '30.59.85.11',
 	},
 	{
-		customerID: 'LAMAI',
+		customerID: 131,
 		companyName: "La maison d'Asie",
 		contactName: 'Annette Roulet',
 		contactTitle: 'Sales Manager',
@@ -1749,7 +1749,7 @@ const fullDataset: DataSet[] = [
 		fax: '61.77.61.11',
 	},
 	{
-		customerID: 'LAUGB',
+		customerID: 132,
 		companyName: 'Laughing Bacchus Wine Cellars',
 		contactName: 'Yoshi Tannamuri',
 		contactTitle: 'Marketing Assistant',
@@ -1762,7 +1762,7 @@ const fullDataset: DataSet[] = [
 		fax: '(604) 555-7293',
 	},
 	{
-		customerID: 'LAZYK',
+		customerID: 133,
 		companyName: 'Lazy K Kountry Store',
 		contactName: 'John Steel',
 		contactTitle: 'Marketing Manager',
@@ -1775,7 +1775,7 @@ const fullDataset: DataSet[] = [
 		fax: '(509) 555-6221',
 	},
 	{
-		customerID: 'LEHMS',
+		customerID: 134,
 		companyName: 'Lehmanns Marktstand',
 		contactName: 'Renate Messner',
 		contactTitle: 'Sales Representative',
@@ -1788,7 +1788,7 @@ const fullDataset: DataSet[] = [
 		fax: '069-0245874',
 	},
 	{
-		customerID: 'LETSS',
+		customerID: 135,
 		companyName: "Let's Stop N Shop",
 		contactName: 'Jaime Yorres',
 		contactTitle: 'Owner',
@@ -1801,7 +1801,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'LILAS',
+		customerID: 136,
 		companyName: 'LILA-Supermercado',
 		contactName: 'Carlos González',
 		contactTitle: 'Accounting Manager',
@@ -1814,7 +1814,7 @@ const fullDataset: DataSet[] = [
 		fax: '(9) 331-7256',
 	},
 	{
-		customerID: 'LINOD',
+		customerID: 137,
 		companyName: 'LINO-Delicateses',
 		contactName: 'Felipe Izquierdo',
 		contactTitle: 'Owner',
@@ -1827,7 +1827,7 @@ const fullDataset: DataSet[] = [
 		fax: '(8) 34-93-93',
 	},
 	{
-		customerID: 'LONEP',
+		customerID: 138,
 		companyName: 'Lonesome Pine Restaurant',
 		contactName: 'Fran Wilson',
 		contactTitle: 'Sales Manager',
@@ -1840,7 +1840,7 @@ const fullDataset: DataSet[] = [
 		fax: '(503) 555-9646',
 	},
 	{
-		customerID: 'MAGAA',
+		customerID: 139,
 		companyName: 'Magazzini Alimentari Riuniti',
 		contactName: 'Giovanni Rovelli',
 		contactTitle: 'Marketing Manager',
@@ -1853,7 +1853,7 @@ const fullDataset: DataSet[] = [
 		fax: '035-640231',
 	},
 	{
-		customerID: 'MAISD',
+		customerID: 140,
 		companyName: 'Maison Dewey',
 		contactName: 'Catherine Dewey',
 		contactTitle: 'Sales Agent',
@@ -1866,7 +1866,7 @@ const fullDataset: DataSet[] = [
 		fax: '(02) 201 24 68',
 	},
 	{
-		customerID: 'MEREP',
+		customerID: 141,
 		companyName: 'Mère Paillarde',
 		contactName: 'Jean Fresnière',
 		contactTitle: 'Marketing Assistant',
@@ -1879,7 +1879,7 @@ const fullDataset: DataSet[] = [
 		fax: '(514) 555-8055',
 	},
 	{
-		customerID: 'MORGK',
+		customerID: 142,
 		companyName: 'Morgenstern Gesundkost',
 		contactName: 'Alexander Feuer',
 		contactTitle: 'Marketing Assistant',
@@ -1892,7 +1892,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'NORTS',
+		customerID: 143,
 		companyName: 'North/South',
 		contactName: 'Simon Crowther',
 		contactTitle: 'Sales Associate',
@@ -1905,7 +1905,7 @@ const fullDataset: DataSet[] = [
 		fax: '(171) 555-2530',
 	},
 	{
-		customerID: 'OCEAN',
+		customerID: 144,
 		companyName: 'Océano Atlántico Ltda.',
 		contactName: 'Yvonne Moncada',
 		contactTitle: 'Sales Agent',
@@ -1918,7 +1918,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 135-5535',
 	},
 	{
-		customerID: 'OLDWO',
+		customerID: 145,
 		companyName: 'Old World Delicatessen',
 		contactName: 'Rene Phillips',
 		contactTitle: 'Sales Representative',
@@ -1931,7 +1931,7 @@ const fullDataset: DataSet[] = [
 		fax: '(907) 555-2880',
 	},
 	{
-		customerID: 'OTTIK',
+		customerID: 146,
 		companyName: 'Ottilies Käseladen',
 		contactName: 'Henriette Pfalzheim',
 		contactTitle: 'Owner',
@@ -1944,7 +1944,7 @@ const fullDataset: DataSet[] = [
 		fax: '0221-0765721',
 	},
 	{
-		customerID: 'PARIS',
+		customerID: 147,
 		companyName: 'Paris spécialités',
 		contactName: 'Marie Bertrand',
 		contactTitle: 'Owner',
@@ -1957,7 +1957,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 42.34.22.77',
 	},
 	{
-		customerID: 'PERIC',
+		customerID: 148,
 		companyName: 'Pericles Comidas clásicas',
 		contactName: 'Guillermo Fernández',
 		contactTitle: 'Sales Representative',
@@ -1970,7 +1970,7 @@ const fullDataset: DataSet[] = [
 		fax: '(5) 545-3745',
 	},
 	{
-		customerID: 'PICCO',
+		customerID: 149,
 		companyName: 'Piccolo und mehr',
 		contactName: 'Georg Pipps',
 		contactTitle: 'Sales Manager',
@@ -1983,7 +1983,7 @@ const fullDataset: DataSet[] = [
 		fax: '6562-9723',
 	},
 	{
-		customerID: 'PRINI',
+		customerID: 150,
 		companyName: 'Princesa Isabel Vinhos',
 		contactName: 'Isabel de Castro',
 		contactTitle: 'Sales Representative',
@@ -1996,7 +1996,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'QUEDE',
+		customerID: 151,
 		companyName: 'Que Delícia',
 		contactName: 'Bernardo Batista',
 		contactTitle: 'Accounting Manager',
@@ -2009,7 +2009,7 @@ const fullDataset: DataSet[] = [
 		fax: '(21) 555-4545',
 	},
 	{
-		customerID: 'QUEEN',
+		customerID: 152,
 		companyName: 'Queen Cozinha',
 		contactName: 'Lúcia Carvalho',
 		contactTitle: 'Marketing Assistant',
@@ -2022,7 +2022,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'QUICK',
+		customerID: 153,
 		companyName: 'QUICK-Stop',
 		contactName: 'Horst Kloss',
 		contactTitle: 'Accounting Manager',
@@ -2035,7 +2035,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'RANCH',
+		customerID: 154,
 		companyName: 'Rancho grande',
 		contactName: 'Sergio Gutiérrez',
 		contactTitle: 'Sales Representative',
@@ -2048,7 +2048,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 123-5556',
 	},
 	{
-		customerID: 'RATTC',
+		customerID: 155,
 		companyName: 'Rattlesnake Canyon Grocery',
 		contactName: 'Paula Wilson',
 		contactTitle: 'Assistant Sales Representative',
@@ -2061,7 +2061,7 @@ const fullDataset: DataSet[] = [
 		fax: '(505) 555-3620',
 	},
 	{
-		customerID: 'REGGC',
+		customerID: 156,
 		companyName: 'Reggiani Caseifici',
 		contactName: 'Maurizio Moroni',
 		contactTitle: 'Sales Associate',
@@ -2074,7 +2074,7 @@ const fullDataset: DataSet[] = [
 		fax: '0522-556722',
 	},
 	{
-		customerID: 'RICAR',
+		customerID: 157,
 		companyName: 'Ricardo Adocicados',
 		contactName: 'Janete Limeira',
 		contactTitle: 'Assistant Sales Agent',
@@ -2087,7 +2087,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'RICSU',
+		customerID: 158,
 		companyName: 'Richter Supermarkt',
 		contactName: 'Michael Holz',
 		contactTitle: 'Sales Manager',
@@ -2100,7 +2100,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'ROMEY',
+		customerID: 159,
 		companyName: 'Romero y tomillo',
 		contactName: 'Alejandra Camino',
 		contactTitle: 'Accounting Manager',
@@ -2113,7 +2113,7 @@ const fullDataset: DataSet[] = [
 		fax: '(91) 745 6210',
 	},
 	{
-		customerID: 'SANTG',
+		customerID: 160,
 		companyName: 'Santé Gourmet',
 		contactName: 'Jonas Bergulfsen',
 		contactTitle: 'Owner',
@@ -2126,7 +2126,7 @@ const fullDataset: DataSet[] = [
 		fax: '07-98 92 47',
 	},
 	{
-		customerID: 'SAVEA',
+		customerID: 161,
 		companyName: 'Save-a-lot Markets',
 		contactName: 'Jose Pavarotti',
 		contactTitle: 'Sales Representative',
@@ -2139,7 +2139,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'SEVES',
+		customerID: 162,
 		companyName: 'Seven Seas Imports',
 		contactName: 'Hari Kumar',
 		contactTitle: 'Sales Manager',
@@ -2152,7 +2152,7 @@ const fullDataset: DataSet[] = [
 		fax: '(171) 555-5646',
 	},
 	{
-		customerID: 'SIMOB',
+		customerID: 163,
 		companyName: 'Simons bistro',
 		contactName: 'Jytte Petersen',
 		contactTitle: 'Owner',
@@ -2165,7 +2165,7 @@ const fullDataset: DataSet[] = [
 		fax: '31 13 35 57',
 	},
 	{
-		customerID: 'SPECD',
+		customerID: 164,
 		companyName: 'Spécialités du monde',
 		contactName: 'Dominique Perrier',
 		contactTitle: 'Marketing Manager',
@@ -2178,7 +2178,7 @@ const fullDataset: DataSet[] = [
 		fax: '(1) 47.55.60.20',
 	},
 	{
-		customerID: 'SPLIR',
+		customerID: 165,
 		companyName: 'Split Rail Beer & Ale',
 		contactName: 'Art Braunschweiger',
 		contactTitle: 'Sales Manager',
@@ -2191,7 +2191,7 @@ const fullDataset: DataSet[] = [
 		fax: '(307) 555-6525',
 	},
 	{
-		customerID: 'SUPRD',
+		customerID: 166,
 		companyName: 'Suprêmes délices',
 		contactName: 'Pascale Cartrain',
 		contactTitle: 'Accounting Manager',
@@ -2204,7 +2204,7 @@ const fullDataset: DataSet[] = [
 		fax: '(071) 23 67 22 21',
 	},
 	{
-		customerID: 'THEBI',
+		customerID: 167,
 		companyName: 'The Big Cheese',
 		contactName: 'Liz Nixon',
 		contactTitle: 'Marketing Manager',
@@ -2217,7 +2217,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'THECR',
+		customerID: 168,
 		companyName: 'The Cracker Box',
 		contactName: 'Liu Wong',
 		contactTitle: 'Marketing Assistant',
@@ -2230,7 +2230,7 @@ const fullDataset: DataSet[] = [
 		fax: '(406) 555-8083',
 	},
 	{
-		customerID: 'TOMSP',
+		customerID: 169,
 		companyName: 'Toms Spezialitäten',
 		contactName: 'Karin Josephs',
 		contactTitle: 'Marketing Manager',
@@ -2243,7 +2243,7 @@ const fullDataset: DataSet[] = [
 		fax: '0251-035695',
 	},
 	{
-		customerID: 'TORTU',
+		customerID: 170,
 		companyName: 'Tortuga Restaurante',
 		contactName: 'Miguel Angel Paolino',
 		contactTitle: 'Owner',
@@ -2256,7 +2256,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'TRADH',
+		customerID: 171,
 		companyName: 'Tradição Hipermercados',
 		contactName: 'Anabela Domingues',
 		contactTitle: 'Sales Representative',
@@ -2269,7 +2269,7 @@ const fullDataset: DataSet[] = [
 		fax: '(11) 555-2168',
 	},
 	{
-		customerID: 'TRAIH',
+		customerID: 172,
 		companyName: "Trail's Head Gourmet Provisioners",
 		contactName: 'Helvetius Nagy',
 		contactTitle: 'Sales Associate',
@@ -2282,7 +2282,7 @@ const fullDataset: DataSet[] = [
 		fax: '(206) 555-2174',
 	},
 	{
-		customerID: 'VAFFE',
+		customerID: 173,
 		companyName: 'Vaffeljernet',
 		contactName: 'Palle Ibsen',
 		contactTitle: 'Sales Manager',
@@ -2295,7 +2295,7 @@ const fullDataset: DataSet[] = [
 		fax: '86 22 33 44',
 	},
 	{
-		customerID: 'VICTE',
+		customerID: 174,
 		companyName: 'Victuailles en stock',
 		contactName: 'Mary Saveley',
 		contactTitle: 'Sales Agent',
@@ -2308,7 +2308,7 @@ const fullDataset: DataSet[] = [
 		fax: '78.32.54.87',
 	},
 	{
-		customerID: 'VINET',
+		customerID: 175,
 		companyName: 'Vins et alcools Chevalier',
 		contactName: 'Paul Henriot',
 		contactTitle: 'Accounting Manager',
@@ -2321,7 +2321,7 @@ const fullDataset: DataSet[] = [
 		fax: '26.47.15.11',
 	},
 	{
-		customerID: 'WANDK',
+		customerID: 176,
 		companyName: 'Die Wandernde Kuh',
 		contactName: 'Rita Müller',
 		contactTitle: 'Sales Representative',
@@ -2334,7 +2334,7 @@ const fullDataset: DataSet[] = [
 		fax: '0711-035428',
 	},
 	{
-		customerID: 'WARTH',
+		customerID: 177,
 		companyName: 'Wartian Herkku',
 		contactName: 'Pirkko Koskitalo',
 		contactTitle: 'Accounting Manager',
@@ -2347,7 +2347,7 @@ const fullDataset: DataSet[] = [
 		fax: '981-443655',
 	},
 	{
-		customerID: 'WELLI',
+		customerID: 178,
 		companyName: 'Wellington Importadora',
 		contactName: 'Paula Parente',
 		contactTitle: 'Sales Manager',
@@ -2360,7 +2360,7 @@ const fullDataset: DataSet[] = [
 		fax: null,
 	},
 	{
-		customerID: 'WHITC',
+		customerID: 179,
 		companyName: 'White Clover Markets',
 		contactName: 'Karl Jablonski',
 		contactTitle: 'Owner',
@@ -2373,7 +2373,7 @@ const fullDataset: DataSet[] = [
 		fax: '(206) 555-4115',
 	},
 	{
-		customerID: 'WILMK',
+		customerID: 180,
 		companyName: 'Wilman Kala',
 		contactName: 'Matti Karttunen',
 		contactTitle: 'Owner/Marketing Assistant',
@@ -2386,7 +2386,7 @@ const fullDataset: DataSet[] = [
 		fax: '90-224 8858',
 	},
 	{
-		customerID: 'WOLZA',
+		customerID: 181,
 		companyName: 'Wolski  Zajazd',
 		contactName: 'Zbyszek Piestrzeniewicz',
 		contactTitle: 'Owner',

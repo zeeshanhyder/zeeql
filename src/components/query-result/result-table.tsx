@@ -27,7 +27,7 @@ export default function QueryTable({ data }: { data: DataSet[] }) {
 			</TableHeader>
 			<TableBody items={data}>
 				{(item) => (
-					<TableRow key={item.customerID ?? 1 + new Date().getTime()}>
+					<TableRow key={item.customerID}>
 						{(columnKey) => (
 							<TableCell>{item[columnKey as DataSetkey]}</TableCell>
 						)}

@@ -44,7 +44,7 @@ const QueryStoreContext = createContext<QueryProps>({
 });
 
 export const QueryStoreProvider = ({ children }: PropsWithChildren) => {
-	const [queries, setQuery] = useState<Query[]>(getLocalStorageQueries());
+	const [,setQuery] = useState<Query[]>(getLocalStorageQueries());
 	const saveQuery = (query: Query) => {
 		setQuery((prevState) => {
 			const latestQueries = [query, ...prevState];

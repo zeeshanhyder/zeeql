@@ -2,6 +2,7 @@
 import { useQueryStore } from '@/store/query-store';
 import { fakeId } from '@/utils/fake-id';
 import { Button, Form, Input } from '@heroui/react';
+import { ArrowsCounterClockwiseIcon, PlayIcon } from '@phosphor-icons/react';
 import { useRouter } from 'next/navigation';
 import { type FormEvent, useState } from 'react';
 
@@ -15,7 +16,10 @@ const SubmitButton = ({ isLoading }: { isLoading: boolean }) => {
 			type="submit"
 			isLoading={isLoading}
 		>
-			Run Query
+			<div className="flex flex-row items-center">
+				<ArrowsCounterClockwiseIcon size={16} weight="bold" />
+				<span className="ml-2">Run Query</span>
+			</div>
 		</Button>
 	);
 };
