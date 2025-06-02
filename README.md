@@ -20,3 +20,27 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Performance
+
+- I used Lighthouse Analytics (Chrome built-in tool) to check first contentful pain, largest contentful pain and overall performance of the app, for both Mobile and Desktop.
+- Testing was carried out on [ZQL Vercel website](https://zeeql.vercel.com)
+
+### Mobile
+Mobile achieved a performance rating of 95.
+
+<img width="1785" alt="Screenshot 2025-06-03 at 1 38 37 AM" src="https://github.com/user-attachments/assets/382dbfd3-fb5b-4d85-a90f-3537f751a92c" />
+
+<img width="690" alt="Screenshot 2025-06-03 at 1 38 57 AM" src="https://github.com/user-attachments/assets/017bd074-699d-4fc9-a0da-2abbc7e758b7" />
+
+
+### Desktop
+Desktop achieved a performance rating of 100. 
+
+<img width="1786" alt="Screenshot 2025-06-03 at 1 39 40 AM" src="https://github.com/user-attachments/assets/66ffba1e-5df1-4e98-9f86-cad2ba6b0e4a" />
+
+<img width="695" alt="Screenshot 2025-06-03 at 1 39 56 AM" src="https://github.com/user-attachments/assets/c1a07c35-f03e-4cb5-a24c-551dfc80b8e2" />
+
+I was able to primarily achieve this performance by two factors:
+- Leverage NextJS RSC which interleaves Server-rendered component with Client component. In this case, the home page itself is server-rendered, where as the Frequently used queries section is Lazy loaded
+- Show Shimmers and Spinners when data is in pending state. It allowed me to paint page faster initially (increasing FCP)
