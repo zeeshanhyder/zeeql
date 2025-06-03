@@ -41,6 +41,15 @@ Desktop achieved a performance rating of 100.
 
 <img width="695" alt="Screenshot 2025-06-03 at 1 39 56 AM" src="https://github.com/user-attachments/assets/c1a07c35-f03e-4cb5-a24c-551dfc80b8e2" />
 
-I was able to primarily achieve this performance by two factors:
-- Leverage NextJS RSC which interleaves Server-rendered component with Client component. In this case, the home page itself is server-rendered, where as the Frequently used queries section is Lazy loaded
+I was able to primarily achieve this performance by three factors:
+- Divide the experience into two pages: Home and Results. This allowed me to paint the Home page faster. while the Results page is lazy loaded, only when the user clicks on the Run Query.
+- Leverage NextJS RSC which interleaves Server-rendered component with Client component. In this case, the home page itself is server-rendered, where as the Frequently used queries section is Lazy loaded. This allowed me to paint the page faster.
 - Show Shimmers and Spinners when data is in pending state. It allowed me to paint page faster initially (increasing FCP)
+
+## Tech stack
+- NextJS
+- Tailwind CSS
+- HeroUI for UI components
+- Phosphorous Icons for iconography
+- BiomeJS for linting and formatting. (It is easier to setup than ESLint and Prettier, and is faster than the other two)
+- Vercel for deployment.
