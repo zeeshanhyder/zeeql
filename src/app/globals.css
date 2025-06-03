@@ -20,14 +20,14 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
     --text-gray: #272727;
     --theme-primary: #D0FFD6;
   }
-}
+} */
 
 html {
   width: 100%;
