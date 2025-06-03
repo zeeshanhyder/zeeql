@@ -1,5 +1,10 @@
 ZQL - A simple tool to run queries and get tabulated results.
 
+## Demo
+<video src="https://github.com/zeeshanhyder/zeeql/blob/main/demo.mp4?raw=true" width="720" controls>
+  Your browser does not support the video tag.
+</video>
+
 ## Getting Started
 
 ### Prerequisites
