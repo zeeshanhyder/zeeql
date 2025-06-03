@@ -1,7 +1,7 @@
 ZQL - A simple tool to run queries and get tabulated results.
 
 ## Demo
-<video src="https://jumpshare.com/embed/2XAA15opwFnIC7P42bSs" />
+<video src="https://jumpshare.com/embed/2XAA15opwFnIC7P42bSs" ></video>
 
 
 ## Getting Started
